@@ -13,6 +13,8 @@ function normalizeBase(raw: string | undefined): string {
 function defineAppConfig() {
   return {
     SERVER_API: "/api",
+    appName: "app-mdview",
+    version: "v1",
   };
 }
 
@@ -51,6 +53,9 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  build: {
+    chunkSizeWarningLimit: 1000,
   },
   server: {
     host: "0.0.0.0",

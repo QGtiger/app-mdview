@@ -1,10 +1,16 @@
-import { pgSchema, integer, varchar, boolean, timestamp } from 'drizzle-orm/pg-core';
+import {
+  pgSchema,
+  integer,
+  varchar,
+  text,
+  boolean,
+  timestamp,
+} from "drizzle-orm/pg-core";
 
-// 使用应用名称作为schema前缀
-const appSchema = pgSchema('app-mdview');
+const appSchema = pgSchema("app-mdview");
 
 /**
- * 用户表
+ * 用户表（预留，v2 用户系统使用）
  */
 export const usersTable = appSchema.table("users", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -15,4 +21,17 @@ export const usersTable = appSchema.table("users", {
   active: boolean().notNull().default(true),
   createdAt: timestamp().notNull().defaultNow(),
   updatedAt: timestamp().notNull().defaultNow(),
+});
+
+/**
+ * 分享表
+ */
+export const sharesTable = appSchema.table("shares", {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  slug: varchar({ length: 16 }).notNull().unique(),
+  content: text().notNull(),
+  isPublic: boolean().notNull().default(false),
+  secretToken: varchar({ length: 64 }).notNull().unique(),
+  createdAt: timestamp().notNull().defaultNow(),
+  expiresAt: timestamp(),
 });
