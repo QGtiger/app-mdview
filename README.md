@@ -1,4 +1,4 @@
-# template-vite-server
+# template-vite-server1
 
 基于 Vite 8 + React 19 + TypeScript 6 的全栈项目模板，前端使用文件系统路由与轻量级状态管理，后端使用 `@lightfish/server` 约定式路由。
 
