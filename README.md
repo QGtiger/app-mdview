@@ -1,4 +1,4 @@
-# template-vite-server
+# template-vite-server1
 
 基于 Vite 8 + React 19 + TypeScript 6 的全栈项目模板，前端使用文件系统路由与轻量级状态管理，后端使用 `@lightfish/server` 约定式路由。
 
@@ -6,16 +6,16 @@
 
 ## 技术栈
 
-| 能力        | 方案                                            |
-| ----------- | ----------------------------------------------- |
-| 构建工具    | Vite 8                                          |
-| UI 框架     | React 19                                        |
-| 类型系统    | TypeScript 6                                    |
-| 路由方案    | `@lightfish/router` — 文件系统路由              |
-| 状态管理    | `@lightfish/react-model` — 桥接 hook 到 Context |
-| 样式方案    | Tailwind CSS 4                                  |
-| 代码规范    | ESLint 10                                       |
-| 后端 / ORM  | `@lightfish/server` + Drizzle ORM + PostgreSQL  |
+| 能力       | 方案                                            |
+| ---------- | ----------------------------------------------- |
+| 构建工具   | Vite 8                                          |
+| UI 框架    | React 19                                        |
+| 类型系统   | TypeScript 6                                    |
+| 路由方案   | `@lightfish/router` — 文件系统路由              |
+| 状态管理   | `@lightfish/react-model` — 桥接 hook 到 Context |
+| 样式方案   | Tailwind CSS 4                                  |
+| 代码规范   | ESLint 10                                       |
+| 后端 / ORM | `@lightfish/server` + Drizzle ORM + PostgreSQL  |
 
 ## 快速开始
 
@@ -70,14 +70,14 @@ pnpm db:push
 
 使用 `@lightfish/router` 实现文件系统路由，页面文件自动映射为路由：
 
-| 文件路径                          | 路由                                      |
-| --------------------------------- | ----------------------------------------- |
-| `src/pages/index.tsx`             | `/`                                       |
-| `src/pages/example/index.tsx`     | `/example`                                |
-| `src/pages/example/layout.tsx`    | `/example` 及其子路由的**布局壳**         |
-| `src/pages/example/404.tsx`       | `/example/*`（未匹配兜底）                |
-| `src/pages/example/settings.tsx`  | 页面元信息（用于设置 `document.title`）   |
-| `src/pages/blog/[id]/index.tsx`   | `/blog/:id`                               |
+| 文件路径                         | 路由                                    |
+| -------------------------------- | --------------------------------------- |
+| `src/pages/index.tsx`            | `/`                                     |
+| `src/pages/example/index.tsx`    | `/example`                              |
+| `src/pages/example/layout.tsx`   | `/example` 及其子路由的**布局壳**       |
+| `src/pages/example/404.tsx`      | `/example/*`（未匹配兜底）              |
+| `src/pages/example/settings.tsx` | 页面元信息（用于设置 `document.title`） |
+| `src/pages/blog/[id]/index.tsx`  | `/blog/:id`                             |
 
 > `@lightfish/router` 只识别 `index.tsx` 作为页面入口。
 
